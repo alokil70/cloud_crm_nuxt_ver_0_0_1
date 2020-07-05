@@ -1,0 +1,25 @@
+header {
+    background-color: $color;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.2);
+    ul {
+        list-style-type: none;
+        display: flex;
+    }
+    a {
+        display: block;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: $padding;
+        line-height: 1;
+        cursor: pointer;
+        transition: .4s;
+        &:hover, &.nuxt-link-exact-active {
+            background-color: $color-alt;
+        }
+    }
+}
