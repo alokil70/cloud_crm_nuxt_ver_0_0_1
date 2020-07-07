@@ -63,7 +63,36 @@ export default {
      ** Axios module configuration
      ** See https://axios.nuxtjs.org/options
      */
-    axios: {},
+    auth: {
+        strategies: {
+            local: {
+                endpoints: {
+                    login: {
+                        url: '/auth/login',
+                        method: 'post',
+                        propertyName: 'token',
+                    },
+                    logout: { url: '/auth/logout', method: 'post' },
+                    user: {
+                        url: '/auth/user',
+                        method: 'get',
+                        propertyName: 'user',
+                    },
+                },
+                // tokenRequired: true,
+                // tokenType: 'bearer',
+                // globalToken: true,
+                // autoFetchUser: true
+            },
+        },
+        redirect: {
+            login: '/auth/login',
+            home: '/',
+        },
+    },
+    axios: {
+        baseURL: 'http://localhost:9099/api',
+    },
     /*
      ** Build configuration
      ** See https://nuxtjs.org/api/configuration-build/

@@ -1,5 +1,7 @@
 @import 'variables';
 @import 'navbar';
+@import "btn";
+@import "auth-card";
 
 * {
     box-sizing: border-box;
@@ -13,4 +15,25 @@
 body {
     background-color: $color-body;
     min-height: 100vh;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.empty-page {
+    background-color: #666;
+    min-height: 100vh;
+}
+
+.default-page {
+    background-color: $color-body;
+    min-height: 100vh;
+}
+
+.w100 {
+    width: 100px;
 }

@@ -16,5 +16,11 @@ module.exports = {
     ],
     plugins: ['prettier'],
     // add your custom rules here
-    rules: {},
+    rules: {
+        'no-console': 'off',
+        'no-undef': 'off',
+        'vue/no-unused-vars': 'off',
+        'vue/no-unused-components': 'off',
+        'nuxt/no-this-in-fetch-data': 'off',
+    },
 }

@@ -2,17 +2,32 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Главная</a></li>
-                <li><nuxt-link to="auth/login">Новости</nuxt-link></li>
+                <li><nuxt-link to="/client">Клиенты</nuxt-link></li>
+                <li><nuxt-link to="/manager">Менеджеры</nuxt-link></li>
                 <li>
-                    <a href="#">Контакты</a>
+                    <nuxt-link to="/setting">Настройки</nuxt-link>
                     <!--<ul>
                         <li><a href="#">Адрес</a></li>
                         <li><a href="#">Телефон</a></li>
                         <li><a href="#">Email</a></li>
                     </ul>-->
                 </li>
-                <li><a href="#">О нас</a></li>
+                <li><nuxt-link to="/">О нас</nuxt-link></li>
+            </ul>
+            <ul>
+                <li v-if="$auth.loggedIn">
+                    <nuxt-link to="/auth/login" @click="$auth.logout()">{{
+                        $auth.user.name
+                    }}</nuxt-link>
+                    <!--<ul>
+                        <li><a href="#">Адрес</a></li>
+                        <li><a href="#">Телефон</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>-->
+                </li>
+                <li v-else>
+                    <nuxt-link to="auth/login">Войти</nuxt-link>
+                </li>
             </ul>
         </nav>
     </header>

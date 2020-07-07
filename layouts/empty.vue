@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="empty-page">
         <nuxt />
     </div>
 </template>
@@ -10,9 +10,4 @@ export default {
 }
 </script>
 
-<style>
-body {
-    background-color: #666666;
-    min-height: 100vh;
-}
-</style>
+<style></style>

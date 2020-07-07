@@ -9,4 +9,9 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+body {
+    background-color: #f4f5f8;
+    min-height: 100vh;
+}
+</style>
