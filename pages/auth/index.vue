@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MCard from '~/components/cards/m-card'
+import MCard from '~/components/card/m-card'
 export default {
     name: 'Auth',
     components: { MCard },

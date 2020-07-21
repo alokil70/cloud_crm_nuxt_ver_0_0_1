@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1>index</h1>
+        <h1>pages/index.vue</h1>
         <div></div>
     </div>
 </template>

@@ -29,15 +29,19 @@ export default {
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
+    router: {
+        middleware: ['auth'],
+    },
+    loading: false,
     /*
      ** Global CSS
      */
-    css: ['~assets/scss/style.scss'],
+    css: ['normalize.css', '~/assets/scss/style.scss'],
     /*
      ** Plugins to load before mounting the App
      ** https://nuxtjs.org/guide/plugins
      */
-    plugins: [],
+    plugins: [{ src: '~/plugins/vuelidate', mode: 'client' }],
     /*
      ** Auto import components
      ** See https://nuxtjs.org/api/configuration-components
@@ -58,6 +62,7 @@ export default {
         '@nuxtjs/axios',
         '@nuxtjs/auth',
         '@nuxtjs/pwa',
+        'nuxt-webfontloader',
     ],
     /*
      ** Axios module configuration
@@ -92,6 +97,13 @@ export default {
     },
     axios: {
         baseURL: 'http://localhost:9099/api',
+    },
+    webfontloader: {
+        events: false,
+        google: {
+            families: ['Roboto:400,500,600:cyrillic&display=swap'],
+        },
+        timeout: 5000,
     },
     /*
      ** Build configuration

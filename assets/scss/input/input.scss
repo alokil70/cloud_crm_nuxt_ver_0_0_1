@@ -1,0 +1,18 @@
+.m-input {
+
+}
+
+.input-field {
+
+}
+
+.input-label {
+    display: flex;
+    flex-direction: column;
+    label {
+        outline: none;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+}

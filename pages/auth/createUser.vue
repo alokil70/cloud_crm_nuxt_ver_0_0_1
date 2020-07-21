@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <label>CompanyName</label>
-                    <input v-model="user.companyName" type="text" />
+                    <input v-model="user.company" type="text" />
                 </div>
                 <div>
                     <label>City</label>
@@ -35,12 +35,13 @@
 export default {
     name: 'Register',
     layout: 'empty',
+    auth: false,
     data: () => ({
         user: {
-            name: 'Alex',
-            email: 'qwe@gmail.com',
-            city: 'Moscow',
-            companyName: 'company1',
+            name: 'Василий Минаев',
+            email: 'user1@gmail.com',
+            city: 'Пятигорск',
+            company: 'ООО Рога и копыта',
             password: 'qwertyuiop',
         },
     }),
@@ -64,9 +65,4 @@ export default {
 }
 </script>
 
-<style>
-body {
-    background-color: #666666;
-    min-height: 100vh;
-}
-</style>
+<style></style>

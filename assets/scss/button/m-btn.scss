@@ -1,0 +1,31 @@
+.m-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $padding/4 $padding;
+    color: $color-white;
+    background-color: $color-alt;
+    /*border-radius: 4px;*/
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    cursor: pointer;
+    margin: 1px;
+}
+
+.m-btn:hover {
+    background: $color-alt-hover;
+}
+
+.material-icons {
+    margin-right: 8px;
+}
+
+.disabled {
+    pointer-events: none;
+    background-color: #aeaeae;
+}
+
+.error {
+    background-color: red;
+}

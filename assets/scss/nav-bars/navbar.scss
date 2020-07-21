@@ -1,7 +1,14 @@
 header {
-    background-color: $color;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $nav-bar-height;
+    background-color: $nav-bar-back;
     padding: 0 20px;
+    position: fixed;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+
 
     nav {
         display: flex;
@@ -11,6 +18,7 @@ header {
     ul {
         list-style-type: none;
         display: flex;
+        align-items: center;
     }
 
     a {

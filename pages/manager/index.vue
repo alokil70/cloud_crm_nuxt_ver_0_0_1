@@ -1,30 +1,39 @@
 <template>
     <div>
-        <h1>Менеджеры</h1>
-        <div class="managers-block">
-            <div v-for="manager in managers" :key="manager._id" class="manager">
-                <nuxt-link :to="`/manager/${manager._id}`">
-                    <div class="manager-name">{{ manager.name }}</div>
-                    <div v-if="manager.admin" class="manager-admin">
-                        Администратор
-                    </div>
-                </nuxt-link>
-            </div>
-        </div>
+        <m-table
+            :title="title"
+            :column-name="columnName"
+            :row-data="managers"
+        />
     </div>
 </template>
 
 <script>
-import axios from '~/.nuxt/axios'
+import { mapState } from 'vuex'
+import MTable from '~/components/m-table'
+
 export default {
     name: 'Index',
-    async asyncData() {
-        const { data } = await axios.get('http://localhost:3000/api/manager/', {
-            headers: {
-                Authorization: $nuxt.$auth.$storage._state['_token.local'],
-            },
-        })
-        return { managers: data }
+    components: { MTable },
+    async asyncData({ store }) {
+        if (store.getters['users/USERS'].length === 0) {
+            await store.dispatch('users/GET_USERS_FROM_API')
+        }
+    },
+    data: () => ({
+        title: 'Менеджеры',
+        columnName: [
+            { id: 1, title: 'Логин' },
+            { id: 2, title: 'Город' },
+            { id: 3, title: 'Компания' },
+            { id: 3, title: 'Лицензия' },
+            { id: 4, title: 'Уровнь доступа' },
+        ],
+    }),
+    computed: {
+        ...mapState({
+            managers: (state) => state.users.users,
+        }),
     },
 }
 </script>
