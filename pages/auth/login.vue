@@ -23,7 +23,7 @@
                                 !$v.login.password.minLength),
                     }"
                 />
-                <div class="flex-between">
+                <!-- <div class="flex-between">
                     <label for="email">Email</label>
                     <input id="email" type="email" />
                 </div>
@@ -34,7 +34,7 @@
                         v-model="login.password"
                         type="password"
                     />
-                </div>
+                </div> -->
             </form>
             <div class="flex">
                 <m-btn :disabled="loading" title="Войти" @click="userLogin" />
@@ -62,7 +62,7 @@ export default {
     validations: {
         login: {
             email: { email, required },
-            password: { required, minLength: minLength(8) },
+            password: { required, minLength: minLength(11) },
         },
     },
     data: () => ({
