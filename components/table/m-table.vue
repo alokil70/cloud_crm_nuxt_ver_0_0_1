@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MTableRow from '~/assets/scss/table/m-table-row'
+import MTableRow from '~/components/table/m-table-row'
 export default {
     name: 'MTable',
     components: { MTableRow },

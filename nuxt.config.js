@@ -96,7 +96,7 @@ export default {
         },
     },
     axios: {
-        baseURL: 'http://localhost:9099/api',
+        baseURL: 'http://192.168.0.3:9099/api',
     },
     webfontloader: {
         events: false,
@@ -104,6 +104,10 @@ export default {
             families: ['Roboto:400,500,600:cyrillic&display=swap'],
         },
         timeout: 5000,
+    },
+    server: {
+        port: 3030,
+        host: '0.0.0.0',
     },
     /*
      ** Build configuration

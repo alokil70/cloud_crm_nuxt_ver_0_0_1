@@ -10,7 +10,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import MTable from '~/components/m-table'
+import MTable from '~/components/table/m-table'
 export default {
     name: 'Index',
     components: { MTable },
