@@ -3,6 +3,7 @@
         <nav>
             <ul>
                 <li><nuxt-link to="/client">Клиенты</nuxt-link></li>
+                <li><nuxt-link to="/diler">Дилеры</nuxt-link></li>
                 <li>
                     <nuxt-link to="/manager">
                         Менеджеры

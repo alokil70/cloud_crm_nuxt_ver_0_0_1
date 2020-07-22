@@ -3,21 +3,29 @@
         <div class="card w460">
             <h1 class="flex-center-align fz28">Авторизация</h1>
             <form>
-                <m-input v-model="login.email" label="login" />
-                <m-input v-model="login.password" />
+                <m-input
+                    v-model="login.email"
+                    label="login"
+                    :class="{
+                        invalid:
+                            ($v.login.email.$dirty &&
+                                !$v.login.email.required) ||
+                            ($v.login.email.$dirty && !$v.login.email.email),
+                    }"
+                />
+                <m-input
+                    v-model="login.password"
+                    :class="{
+                        invalid:
+                            ($v.login.password.$dirty &&
+                                !$v.login.password.required) ||
+                            ($v.login.password.$dirty &&
+                                !$v.login.password.minLength),
+                    }"
+                />
                 <div class="flex-between">
                     <label for="email">Email</label>
-                    <input
-                        id="email"
-                        type="email"
-                        :class="{
-                            invalid:
-                                ($v.login.email.$dirty &&
-                                    !$v.login.email.required) ||
-                                ($v.login.email.$dirty &&
-                                    !$v.login.email.email),
-                        }"
-                    />
+                    <input id="email" type="email" />
                 </div>
                 <div class="flex-between">
                     <label for="password">Password</label>
@@ -25,13 +33,6 @@
                         id="password"
                         v-model="login.password"
                         type="password"
-                        :class="{
-                            invalid:
-                                ($v.login.password.$dirty &&
-                                    !$v.login.password.required) ||
-                                ($v.login.password.$dirty &&
-                                    !$v.login.password.minLength),
-                        }"
                     />
                 </div>
             </form>
@@ -53,6 +54,7 @@ import MBtn from '~/components/button/m-btn'
 import MInput from '~/components/input/m-input'
 
 export default {
+    sas: 'dds',
     name: 'Login',
     components: { MInput, MBtn },
     layout: 'empty',
