@@ -62,7 +62,7 @@ export default {
     validations: {
         login: {
             email: { email, required },
-            password: { required, minLength: minLength(11) },
+            password: { required, minLength: minLength(10) },
         },
     },
     data: () => ({
