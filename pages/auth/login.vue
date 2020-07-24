@@ -54,7 +54,6 @@ import MBtn from '~/components/button/m-btn'
 import MInput from '~/components/input/m-input'
 
 export default {
-    sas: 'dds',
     name: 'Login',
     components: { MInput, MBtn },
     layout: 'empty',

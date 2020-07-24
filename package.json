@@ -8,7 +8,7 @@
         "start": "nuxt start",
         "export": "nuxt export",
         "serve": "nuxt serve",
-        "lint:js": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+        "fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
         "lint": "npm run lint:js"
     },
     "dependencies": {
