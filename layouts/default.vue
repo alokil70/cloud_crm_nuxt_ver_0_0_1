@@ -1,13 +1,14 @@
 <template>
     <div class="default-page">
         <navbar />
-        <left-bar />
+        <!--<left-bar />-->
         <Nuxt class="container" />
     </div>
 </template>
 <script>
 import Navbar from '~/components/nav-bars/Navbar'
 import LeftBar from '~/components/nav-bars/left-bar'
+
 export default {
     components: { LeftBar, Navbar },
 }

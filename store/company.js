@@ -1,30 +1,30 @@
 export const state = () => ({
-    users: [],
+    company: [],
 })
 
 export const mutations = {
-    SET_USERS_TO_STATE(state, payload) {
-        state.users = payload
+    SET_COMPANY_TO_STATE(state, payload) {
+        state.company = payload
     },
 }
 export const actions = {
-    GET_USERS_FROM_API({ commit }) {
+    GET_COMPANY_FROM_API({ commit }) {
         const token = this.$auth.getToken('local')
         if (token) {
             this.$axios({
                 method: 'get',
-                url: '/users',
+                url: '/company',
                 headers: {
                     Authorization: 'Bearer ' + token.split(' ')[2],
                 },
             }).then((res) => {
-                commit('SET_USERS_TO_STATE', res.data)
+                commit('SET_COMPANY_TO_STATE', res.data)
             })
         }
     },
-    async SET_USER_TO_API({ commit }, payload) {
+    async SET_COMPANY_TO_API({ commit }, payload) {
         try {
-            await this.$axios.post('/auth/register', payload).then((e) => {
+            await this.$axios.post('/company', payload).then((e) => {
                 if (e.status === 201) {
                     this.$router.push('/auth/login')
                 } else {
@@ -35,14 +35,16 @@ export const actions = {
             console.log(err)
         }
     },
-    async GET_USER_BY_ID({ state }, id) {
-        return await state.users.find((u) => u.id === id)
+    async GET_COMPANY_BY_ID({ state }, id) {
+        const asa = await state.company.find((u) => u.id === id)
+        console.log(asa)
+        return asa
     },
 }
 
 export const getters = {
-    USERS: (s) => s.users,
+    COMPANY: (s) => s.company,
     get: (s) => (id) => {
-        return s.users.find((u) => u.id === id) || {}
+        return s.company.find((u) => u.id === id) || {}
     },
 }

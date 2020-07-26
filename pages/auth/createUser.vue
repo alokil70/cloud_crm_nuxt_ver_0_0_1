@@ -46,8 +46,8 @@ export default {
         },
     }),
     methods: {
-        async userRegister() {
-            try {
+        userRegister({ store }) {
+            /* try {
                 await this.$axios
                     .post('/auth/register', this.user)
                     .then((e) => {
@@ -59,7 +59,8 @@ export default {
                     })
             } catch (err) {
                 console.log(err)
-            }
+            } */
+            this.$store.dispatch('users/SET_USER_TO_API', this.user)
         },
     },
 }
