@@ -1,27 +1,28 @@
-<template>
+type<template>
     <div class="no-decor">
         <nuxt-link
             :to="{ name: 'manager-id', params: { id: rowData.id } }"
             class="flex row"
         >
             <div class="row-left">
-                <div>{{ rowData.email }}</div>
-                <div>{{ rowData.email }}</div>
-                <div>{{ rowData.email }}</div>
-                <div>{{ rowData.email }}</div>
+                <div>{{ rowData.type }}</div>
+                <div>{{ rowData.type }}</div>
+                <div>{{ rowData.type }}</div>
+                adress
+                <div>{{ rowData.type }}</div>
             </div>
             <div class="row-left">
-                <div>{{ rowData.city }}</div>
-                <div>{{ rowData.city }}</div>
-                <div>{{ rowData.city }}</div>
-                <div>{{ rowData.city }}</div>
+                <div>{{ rowData.address }}</div>
+                <div>{{ rowData.address }}</div>
+                <div>{{ rowData.address }}</div>
+                <div>{{ rowData.address }}</div>
             </div>
             <div class="row-left">
                 <div>{{ rowData.company }}</div>
-                <div>Создана {{ dateFilter(rowData.createdAt) }}</div>
+                <div>Создана {{ rowData.createdAt }}</div>
             </div>
             <div class="row-left">
-                Действительна до {{ dateFilter(rowData.expire) }}
+                {{ rowData.description }}
             </div>
             <div class="row-center">Администратор {{ rowData.admin }}</div>
         </nuxt-link>
@@ -29,8 +30,6 @@
 </template>
 
 <script>
-import dateFilter from '~/plugins/filters/date.filter'
-
 export default {
     name: 'MTableRow',
     props: {
@@ -39,11 +38,6 @@ export default {
             default: () => {
                 return {}
             },
-        },
-    },
-    methods: {
-        dateFilter(value) {
-            return dateFilter(new Date(value), 'datetime')
         },
     },
 }

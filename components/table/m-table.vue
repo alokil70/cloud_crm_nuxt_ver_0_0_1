@@ -12,6 +12,7 @@
 
 <script>
 import MTableRow from '~/components/table/m-table-row'
+
 export default {
     name: 'MTable',
     components: { MTableRow },

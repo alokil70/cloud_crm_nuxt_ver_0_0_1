@@ -1,6 +1,6 @@
 <template>
     <div class="m-btn" :class="className" @click="click">
-        <!--<i class="material-icons">edit</i>-->
+        <!--<i class="material-icons">e dit</i>-->
         <span>{{ title }}</span>
     </div>
 </template>
