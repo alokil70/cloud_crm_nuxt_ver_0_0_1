@@ -3,16 +3,10 @@
         <h1 class="flex-center-align fz28 bg_title">{{ title }}</h1>
         <div class="flex">
             <m-btn :title="'Добавить'" class="mb6 bg-green" @click="add" />
-            <m-btn :title="'Добавить'" class="mb6" />
+            <m-btn :title="'Добавить'" class="mb6" @click="add2" />
             <m-btn :title="'Добавить'" class="mb6" />
             <m-btn :title="'Добавить'" class="mb6" />
         </div>
-
-        <modal name="my-first-modal">
-            <h2 class="flex-center-align">
-                Тут будет форма добавить оъьект
-            </h2>
-        </modal>
 
         <div class="m-table__header flex-around">
             <p v-for="col in columnName" :key="col.title">
@@ -48,10 +42,11 @@
 <script>
 import dateFilter from '~/plugins/filters/date.filter'
 import MBtn from '~/components/button/m-btn'
+import ModalWrapper from '~/components/modal-list/ModalWrapper'
 
 export default {
     name: 'MTable',
-    components: { MBtn },
+    components: { ModalWrapper, MBtn },
     props: {
         title: {
             type: String,
@@ -75,7 +70,10 @@ export default {
             return dateFilter(new Date(value), 'datetime')
         },
         add() {
-            this.$modal.show('my-first-modal')
+            this.$modal.show(ModalWrapper)
+        },
+        add2() {
+            this.$modal.show('my-first-modal2')
         },
     },
 }
