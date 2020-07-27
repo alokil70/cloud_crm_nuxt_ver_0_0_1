@@ -2,10 +2,17 @@
     <div class="m-table card">
         <h1 class="flex-center-align fz28 bg_title">{{ title }}</h1>
         <div class="flex">
-            <m-btn :title="'Добавить'" class="m6 bg-green" />
-            <m-btn />
-            <m-btn />
+            <m-btn :title="'Добавить'" class="mb6 bg-green" @click="add" />
+            <m-btn :title="'Добавить'" class="mb6" />
+            <m-btn :title="'Добавить'" class="mb6" />
+            <m-btn :title="'Добавить'" class="mb6" />
         </div>
+
+        <modal name="my-first-modal">
+            <h2 class="flex-center-align">
+                Тут будет форма добавить оъьект
+            </h2>
+        </modal>
 
         <div class="m-table__header flex-around">
             <p v-for="col in columnName" :key="col.title">
@@ -66,6 +73,9 @@ export default {
     methods: {
         dateFilter(value) {
             return dateFilter(new Date(value), 'datetime')
+        },
+        add() {
+            this.$modal.show('my-first-modal')
         },
     },
 }
