@@ -6,7 +6,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import MTable from '~/components/table/company/m-table'
+import MTable from '~/components/table/company/m-table-company'
 
 export default {
     name: 'Index',
