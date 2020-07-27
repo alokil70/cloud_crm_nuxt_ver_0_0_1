@@ -1,31 +1,56 @@
 <template>
     <div class="">
-        <h1 class="flex-center-align fz28">Авторизация</h1>
+        <h1 class="flex-center-align fz28">Добавить</h1>
         <form>
             <m-input
-                v-model="login.email"
-                label="login"
+                v-model="formdata.company"
+                label="Наименоввние"
                 :class="{
                     invalid:
-                        ($v.login.email.$dirty && !$v.login.email.required) ||
-                        ($v.login.email.$dirty && !$v.login.email.email),
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.required) ||
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.email),
                 }"
             />
             <m-input
-                v-model="login.password"
+                v-model="formdata.address"
+                label="Адрес"
                 :class="{
                     invalid:
-                        ($v.login.password.$dirty &&
-                            !$v.login.password.required) ||
-                        ($v.login.password.$dirty &&
-                            !$v.login.password.minLength),
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.required) ||
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.email),
+                }"
+            />
+            <m-input
+                v-model="formdata.type"
+                label="Тип"
+                :class="{
+                    invalid:
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.required) ||
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.email),
+                }"
+            />
+            <m-input
+                v-model="formdata.description"
+                label="Описание"
+                :class="{
+                    invalid:
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.required) ||
+                        ($v.formdata.company.$dirty &&
+                            !$v.formdata.company.email),
                 }"
             />
         </form>
         <div class="flex">
             <m-btn
                 :disabled="loading"
-                title="Войти"
+                title="Добавить"
                 class="bg-red"
                 @click="userLogin"
             />
@@ -48,15 +73,19 @@ export default {
         },
     },
     validations: {
-        login: {
-            email: { email, required },
-            password: { required, minLength: minLength(10) },
+        formdata: {
+            company: { email, required },
+            address: { required, minLength: minLength(10) },
+            type: { required, minLength: minLength(10) },
+            description: { required, minLength: minLength(10) },
         },
     },
     data: () => ({
-        login: {
-            email: 'user1@gmail.com',
-            password: 'qwertyuiop',
+        formdata: {
+            company: 'user1@gmail.com',
+            address: 'qwertyuiop',
+            type: 'qwertyuiop',
+            description: 'qwertyuiop',
         },
         error: null,
         loading: false,
