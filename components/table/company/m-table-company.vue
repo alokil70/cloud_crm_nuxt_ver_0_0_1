@@ -14,7 +14,7 @@
             </p>
         </div>
 
-        <div v-for="row in rowData" :key="row.id" class="flex">
+        <div v-for="row in rowData" :key="row.id" class="flex content-table">
             <div class="row-left">
                 <div>{{ row.type }}</div>
                 <div>{{ row.type }}</div>
@@ -42,7 +42,7 @@
 <script>
 import dateFilter from '~/plugins/filters/date.filter'
 import MBtn from '~/components/button/m-btn'
-import ModalWrapper from '~/components/modal-list/ModalWrapper'
+import ModalWrapper from '~/components/modal/ModalWrapper'
 
 export default {
     name: 'MTable',

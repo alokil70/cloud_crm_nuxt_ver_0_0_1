@@ -11,7 +11,7 @@
         }
     }
 }
-.content-table:nth-of-type(odd) {
+.content-table:nth-of-type(even) {
     background-color: $color-grey-light;
 }
 .table-row {
