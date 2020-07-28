@@ -1,5 +1,6 @@
 <template>
     <div>
+        <m-toggle />
         <m-table :title="title" :column-name="columnName" :row-data="company" />
     </div>
 </template>
@@ -7,10 +8,11 @@
 <script>
 import { mapState } from 'vuex'
 import MTable from '~/components/table/company/m-table-company'
+import MToggle from '~/components/checkbox/m-toggle'
 
 export default {
     name: 'Index',
-    components: { MTable },
+    components: { MToggle, MTable },
     async asyncData({ store }) {
         if (store.getters['company/COMPANY'].length === 0) {
             await store.dispatch('company/GET_COMPANY_FROM_API')
