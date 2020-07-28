@@ -65,8 +65,12 @@
 
 <script>
 import { email, required, minLength } from 'vuelidate/lib/validators'
+import MInput from '~/components/input/m-input'
+import MBtn from '~/components/button/m-btn'
+
 export default {
     name: 'ModalWrapper',
+    components: { MInput, MBtn },
     props: {
         loggin: {
             type: Boolean,
@@ -82,10 +86,10 @@ export default {
     },
     data: () => ({
         formdata: {
-            company: 'user1@gmail.com',
-            address: 'qwertyuiop',
-            type: 'qwertyuiop',
-            description: 'qwertyuiop',
+            company: '',
+            address: '',
+            type: '',
+            description: '',
         },
         error: null,
         loading: false,

@@ -11,7 +11,9 @@
         }
     }
 }
-
+.content-table:nth-of-type(odd) {
+    background-color: $color-grey-light;
+}
 .table-row {
     padding-left: $padding;
 }

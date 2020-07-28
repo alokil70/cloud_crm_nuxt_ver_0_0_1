@@ -38,5 +38,4 @@
     &__input:checked ~ &__fill::after {
         transform: translateX(var(--height));
     }
-
 }

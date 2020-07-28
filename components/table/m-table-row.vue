@@ -1,8 +1,8 @@
 <template>
-    <div class="no-decor">
+    <div class="content-table">
         <nuxt-link
             :to="{ name: 'manager-id', params: { id: rowData.id } }"
-            class="flex row"
+            class="flex"
         >
             <div class="row-left">
                 <div>{{ rowData.email }}</div>
