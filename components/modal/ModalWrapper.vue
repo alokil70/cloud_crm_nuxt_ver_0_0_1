@@ -65,7 +65,7 @@
 
 <script>
 import { email, required, minLength } from 'vuelidate/lib/validators'
-import MInput from '~/components/input/m-input'
+import MInput from '@/components/form/m-input'
 import MBtn from '~/components/button/m-btn'
 
 export default {

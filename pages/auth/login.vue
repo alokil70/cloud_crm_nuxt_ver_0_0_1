@@ -50,8 +50,8 @@
 
 <script>
 import { email, required, minLength } from 'vuelidate/lib/validators'
+import MInput from '@/components/form/m-input'
 import MBtn from '~/components/button/m-btn'
-import MInput from '~/components/input/m-input'
 
 export default {
     name: 'Login',

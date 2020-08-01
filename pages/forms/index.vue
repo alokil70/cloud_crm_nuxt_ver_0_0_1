@@ -1,5 +1,7 @@
 <template>
     <div>
+        <m-form />
+        <m-toggle />
         <m-table :title="title" :column-name="columnName" :row-data="company" />
     </div>
 </template>

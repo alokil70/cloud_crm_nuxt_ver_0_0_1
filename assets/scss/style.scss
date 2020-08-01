@@ -17,14 +17,16 @@
 
 @import "table/m-table";
 
-@import "input/input";
+@import "form/input";
+@import "form/toggle";
+@import "form/form";
+
 
 @import "size/height";
 @import "size/width";
 @import "size/margin";
 @import "size/padding";
 
-@import "checkbox/toggle";
 
 * {
     box-sizing: border-box;

@@ -43,10 +43,11 @@
 import dateFilter from '~/plugins/filters/date.filter'
 import MBtn from '~/components/button/m-btn'
 import ModalWrapper from '~/components/modal/ModalWrapper'
+import MForm from '~/components/form/m-form'
 
 export default {
     name: 'MTable',
-    components: { ModalWrapper, MBtn },
+    components: { MBtn },
     props: {
         title: {
             type: String,
@@ -70,7 +71,7 @@ export default {
             return dateFilter(new Date(value), 'datetime')
         },
         add() {
-            this.$modal.show(ModalWrapper)
+            this.$modal.show(MForm)
         },
         add2() {
             this.$modal.show('my-first-modal2')

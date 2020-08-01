@@ -10,6 +10,7 @@
                         Менеджеры
                     </nuxt-link>
                 </li>
+                <li><nuxt-link to="/forms">Формы</nuxt-link></li>
                 <li>
                     <nuxt-link v-if="$auth.user.admin" to="/setting">
                         Настройки

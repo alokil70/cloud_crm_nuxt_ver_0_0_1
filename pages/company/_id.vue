@@ -30,8 +30,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import MInput from '@/components/form/m-input'
 import MBtn from '~/components/button/m-btn'
-import MInput from '~/components/input/m-input'
 
 export default {
     name: 'Id',
