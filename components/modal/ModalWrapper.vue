@@ -5,6 +5,8 @@
             <m-input
                 v-model="formdata.company"
                 label="Наименоввние"
+                :error="invalid"
+                :info="formdata.company"
                 :class="{
                     invalid:
                         ($v.formdata.company.$dirty &&
@@ -72,8 +74,9 @@ export default {
     name: 'ModalWrapper',
     components: { MInput, MBtn },
     props: {
-        loggin: {
+        invalid: {
             type: Boolean,
+            default: false,
         },
     },
     validations: {

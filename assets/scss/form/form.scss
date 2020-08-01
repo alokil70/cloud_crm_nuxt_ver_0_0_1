@@ -71,6 +71,15 @@
 .spacing-1 {
     letter-spacing: 1px;
 }
+
 .spacing-2 {
     letter-spacing: 2px;
+}
+
+.invalid {
+    color: $color-alt;
+}
+
+.error {
+    color: $color-alt;
 }

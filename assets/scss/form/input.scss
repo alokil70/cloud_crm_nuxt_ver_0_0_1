@@ -7,6 +7,9 @@
         left: 8px;
         padding: 0 5px;
         background-color: $color-body;
+        &.error {
+            color: $color-alt;
+        }
     }
     input {
         width: 100%;
@@ -14,16 +17,18 @@
         letter-spacing: 1px;
         padding: 10px 10px 4px 4px;
         border-radius: 5px;
-        border: 1px solid $color-black;
-        background-color: transparent;
+        border: 1px solid $color-grey-dark;
         outline: none;
+        &.error {
+            border-color: $color-alt;
+        }
     }
     span {
         position: absolute;
         display: block;
         font-size: 14px;
     }
-    input:focus {
-        border: 1px solid $color-green;
+    input:hover, input:focus {
+        border: 1px solid $color-black;
     }
 }

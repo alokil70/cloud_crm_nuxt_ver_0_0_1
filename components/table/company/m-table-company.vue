@@ -2,10 +2,10 @@
     <div class="m-table card">
         <h1 class="flex-center-align fz28 bg_title">{{ title }}</h1>
         <div class="flex">
-            <m-btn :title="'Добавить'" class="mb6 bg-green" @click="add" />
-            <m-btn :title="'Добавить'" class="mb6" @click="add2" />
-            <m-btn :title="'Добавить'" class="mb6" />
-            <m-btn :title="'Добавить'" class="mb6" />
+            <m-btn title="Добавит" class="mb6 bg-green" @click="add" />
+            <m-btn title="Добавить" class="mb6" @click="add2" />
+            <m-btn title="Добавить" class="mb6" />
+            <m-btn title="Добавить" class="mb6" />
         </div>
 
         <div class="m-table__header flex-around">
@@ -71,7 +71,7 @@ export default {
             return dateFilter(new Date(value), 'datetime')
         },
         add() {
-            this.$modal.show(MForm)
+            this.$modal.show(ModalWrapper)
         },
         add2() {
             this.$modal.show('my-first-modal2')

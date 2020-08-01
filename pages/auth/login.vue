@@ -2,43 +2,44 @@
     <div class="center">
         <div class="card w460">
             <h1 class="flex-center-align fz28">Авторизация</h1>
-            <form>
+            <form class="m12">
                 <m-input
-                    v-model="login.email"
-                    label="login"
+                    v-model.trim="$v.login.email.$model"
+                    label="Login"
+                    :error="!$v.login.email.required || !$v.login.email.email"
                     :class="{
-                        invalid:
+                        error:
                             ($v.login.email.$dirty &&
                                 !$v.login.email.required) ||
                             ($v.login.email.$dirty && !$v.login.email.email),
                     }"
                 />
                 <m-input
-                    v-model="login.password"
+                    v-model.trim="$v.login.password.$model"
+                    label="Password"
+                    type="password"
+                    :error="
+                        !$v.login.password.required ||
+                        !$v.login.password.minLength
+                    "
                     :class="{
-                        invalid:
+                        error:
                             ($v.login.password.$dirty &&
                                 !$v.login.password.required) ||
                             ($v.login.password.$dirty &&
                                 !$v.login.password.minLength),
                     }"
                 />
-                <!-- <div class="flex-between">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" />
-                </div>
-                <div class="flex-between">
-                    <label for="password">Password</label>
-                    <input
-                        id="password"
-                        v-model="login.password"
-                        type="password"
-                    />
-                </div> -->
             </form>
             <div class="flex">
-                <m-btn :disabled="loading" title="Войти" @click="userLogin" />
                 <m-btn
+                    class="bg-red"
+                    :disabled="loading"
+                    title="Войти"
+                    @click="userLogin"
+                />
+                <m-btn
+                    class="bg-red"
                     :disabled="loading"
                     title="Создать пользователя"
                     @click="userCreate"
@@ -76,6 +77,7 @@ export default {
         async userLogin() {
             if (this.$v.$invalid) {
                 this.$v.$touch()
+                this.error = true
                 return
             }
             this.loading = true

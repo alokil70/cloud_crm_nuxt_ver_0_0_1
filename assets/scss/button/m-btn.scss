@@ -9,6 +9,7 @@
     width: 100%;
     user-select: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .m-btn:hover {
@@ -22,8 +23,4 @@
 .disabled {
     pointer-events: none;
     background-color: #aeaeae;
-}
-
-.error {
-    background-color: red;
 }

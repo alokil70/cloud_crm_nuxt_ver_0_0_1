@@ -7,9 +7,10 @@
             :placeholder="placeholder"
             autofocus="autofocus"
             :type="type"
+            :class="{ error }"
             @input="input"
         />
-        <span v-if="error" class="red">{{ info }}</span>
+        <span v-if="error" class="error">{{ info }}</span>
     </div>
 </template>
 
