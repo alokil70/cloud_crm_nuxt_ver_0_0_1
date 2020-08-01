@@ -19,16 +19,10 @@
         border-radius: 5px;
         border: 1px solid $color-grey-dark;
         outline: none;
-        &.error {
-            border-color: $color-alt;
-        }
     }
     span {
         position: absolute;
         display: block;
         font-size: 14px;
-    }
-    input:hover, input:focus {
-        border: 1px solid $color-black;
     }
 }

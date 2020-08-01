@@ -2,10 +2,10 @@
     <div class="center">
         <div class="card w460">
             <h1 class="flex-center-align fz28">Авторизация</h1>
-            <form class="m12">
+            <form class="m24">
                 <m-input
                     v-model.trim="$v.login.email.$model"
-                    label="Login"
+                    label="Логин"
                     :error="!$v.login.email.required || !$v.login.email.email"
                     :class="{
                         error:
@@ -16,7 +16,7 @@
                 />
                 <m-input
                     v-model.trim="$v.login.password.$model"
-                    label="Password"
+                    label="Пароль"
                     type="password"
                     :error="
                         !$v.login.password.required ||

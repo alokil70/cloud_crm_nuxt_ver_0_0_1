@@ -4,6 +4,7 @@
         <input
             :id="id"
             :value="value"
+            class="form-control"
             :placeholder="placeholder"
             autofocus="autofocus"
             :type="type"
