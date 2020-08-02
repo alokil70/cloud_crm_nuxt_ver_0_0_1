@@ -40,6 +40,9 @@
 body {
     background-color: $color-body;
     min-height: 100vh;
+    h1 {
+        font-weight: normal;
+    }
 }
 
 .bg_title {
