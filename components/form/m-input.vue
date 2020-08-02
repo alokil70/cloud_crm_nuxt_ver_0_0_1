@@ -9,7 +9,7 @@
             autofocus="autofocus"
             :type="type"
             :class="{ error: !isValid }"
-            @input="input"
+            @input="input($event.target.value)"
         />
         <span v-if="!isValid" class="error">{{ infoMessage }}</span>
     </div>
@@ -50,8 +50,8 @@ export default {
         },
     },
     methods: {
-        input(e) {
-            this.$emit('input', e.target.value)
+        input(value) {
+            this.$emit('input', value)
         },
     },
 }
