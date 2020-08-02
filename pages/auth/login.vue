@@ -6,8 +6,6 @@
                 <m-input
                     v-model.trim="$v.login.email.$model"
                     label="Логин"
-                    :info-message="invalid"
-                    :class="{ error: infoMessage }"
                 /><m-input
                     v-model.trim="$v.login.email.$model"
                     label="Логин"
