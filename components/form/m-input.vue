@@ -8,10 +8,10 @@
             :placeholder="placeholder"
             autofocus="autofocus"
             :type="type"
-            :class="{ error }"
+            :class="{ error: !isValid }"
             @input="input"
         />
-        <span v-if="error" class="error">{{ info }}</span>
+        <span v-if="!isValid" class="error">{{ infoMessage }}</span>
     </div>
 </template>
 
@@ -31,9 +31,9 @@ export default {
             type: String,
             default: null,
         },
-        info: {
+        infoMessage: {
             type: String,
-            default: 'Поле обязательно для заполнения',
+            default: '',
         },
         type: {
             type: String,
@@ -43,9 +43,10 @@ export default {
             type: [String, Number],
             default: '',
         },
-        error: {
-            type: Boolean,
-            default: false,
+    },
+    computed: {
+        isValid() {
+            return !!this.infoMessage
         },
     },
     methods: {

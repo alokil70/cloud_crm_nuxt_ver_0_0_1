@@ -6,7 +6,13 @@
                 <m-input
                     v-model.trim="$v.login.email.$model"
                     label="Логин"
-                    :error="!$v.login.email.required || !$v.login.email.email"
+                    :info-message="invalid"
+                    :class="{ error: infoMessage }"
+                /><m-input
+                    v-model.trim="$v.login.email.$model"
+                    label="Логин"
+                    :error="!$v.login.email.required"
+                    :info-span01="infoMessage"
                     :class="{
                         error:
                             ($v.login.email.$dirty &&
@@ -70,10 +76,27 @@ export default {
             email: 'user1@gmail.com',
             password: 'qwertyuiop',
         },
-        error: null,
+        infoMessage: '',
+        error: false,
         loading: false,
     }),
+    computed: {
+        /* isError() {
+            return (this.error = true)
+        } */
+    },
     methods: {
+        invalid() {
+            if (!this.$v.login.email.email) {
+                this.error = true
+                return 'Поле заполнено некорректно'
+            }
+            if (!this.$v.login.email.required) {
+                this.error = true
+                this.infoMessage = 'Поле обязательно для заполнения'
+                return true
+            }
+        },
         async userLogin() {
             if (this.$v.$invalid) {
                 this.$v.$touch()
