@@ -3,6 +3,10 @@
         <div class="card w460">
             <h1 class="flex-center-align fz28">Авторизация</h1>
             <form class="m24">
+                <m-input-email
+                    v-model.trim="$v.login.email.$model"
+                    label="Логин"
+                />
                 <m-input
                     v-model.trim="$v.login.email.$model"
                     label="Логин"
@@ -56,11 +60,12 @@
 <script>
 import { email, required, minLength } from 'vuelidate/lib/validators'
 import MInput from '@/components/form/m-input'
+import MInputEmail from '@/components/form/m-input-email'
 import MBtn from '~/components/button/m-btn'
 
 export default {
     name: 'Login',
-    components: { MInput, MBtn },
+    components: { MInputEmail, MInput, MBtn },
     layout: 'empty',
     auth: false,
     validations: {

@@ -14,25 +14,24 @@
             :class="{ error }"
             @input="input($event.target.value)"
         />
-        <span v-if="!$v.value.minLength" class="error">min</span>
         <span v-if="!$v.value.required" class="error"
             >Поле обязательно для заполнения</span
         >
-        <span v-if="!$v.value.email && type === 'email' && error" class="error"
-            >Поле заполнено некорректно</span
+        <span v-if="!$v.value.email && error" class="error"
+            >Email заполнен некорректно</span
         >
     </div>
 </template>
 
 <script>
-import { required, minLength } from 'vuelidate/lib/validators'
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
-    name: 'MInput',
+    name: 'MInputEmail',
     validations: {
         value: {
+            email,
             required,
-            minLength: minLength(4),
         },
     },
     props: {
@@ -54,7 +53,7 @@ export default {
         },
         type: {
             type: String,
-            default: 'text',
+            default: 'email',
         },
         value: {
             type: [String, Number],
