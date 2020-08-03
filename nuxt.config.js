@@ -1,3 +1,5 @@
+import { URL } from './config/var'
+
 export default {
     /*
      ** Nuxt rendering mode
@@ -99,7 +101,7 @@ export default {
         },
     },
     axios: {
-        baseURL: 'http://192.168.0.3:9099/api',
+        baseURL: URL,
     },
     webfontloader: {
         events: false,
