@@ -71,7 +71,11 @@ export default {
             return dateFilter(new Date(value), 'datetime')
         },
         add() {
-            this.$modal.show(ModalWrapper)
+            this.$modal.show(
+                MForm,
+                { height: 'auto' },
+                { height: 'auto', width: '90%' }
+            )
         },
         add2() {
             this.$modal.show('my-first-modal2')

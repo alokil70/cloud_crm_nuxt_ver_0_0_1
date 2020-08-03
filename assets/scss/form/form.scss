@@ -1,6 +1,6 @@
 .form {
     width: 100%;
-    margin: $margin;
+    margin: $margin*2;
     &__title {
         font-weight: normal;
         text-align: center;
@@ -17,7 +17,7 @@
     }
 
     &__groups {
-        padding: 20px;
+        padding: 40px;
         border: 1px solid #7f828b;
         border-radius: 5px;
     }
