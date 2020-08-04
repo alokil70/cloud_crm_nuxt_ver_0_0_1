@@ -96,6 +96,7 @@ export default {
         return {
             name: '',
             age: 0,
+            aaaa: ''
         }
     },
     validations: {
