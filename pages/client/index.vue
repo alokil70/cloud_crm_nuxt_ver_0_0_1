@@ -13,6 +13,7 @@ import { mapState } from 'vuex'
 import MTable from '~/components/table/m-table'
 export default {
     name: 'Index',
+    auth: true,
     components: { MTable },
     async asyncData({ store }) {
         if (store.getters['users/USERS'].length === 0) {

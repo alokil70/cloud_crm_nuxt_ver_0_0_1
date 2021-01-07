@@ -1,7 +1,6 @@
 <template>
     <div class="default-page">
         <navbar />
-        <!--<left-bar />-->
         <modal name="my-first-modal">
             <h2>default</h2>
         </modal>
@@ -13,10 +12,9 @@
 </template>
 <script>
 import Navbar from '~/components/nav-bars/Navbar'
-import LeftBar from '~/components/nav-bars/left-bar'
 
 export default {
-    components: { LeftBar, Navbar },
+    components: { Navbar },
 }
 </script>
 <style>

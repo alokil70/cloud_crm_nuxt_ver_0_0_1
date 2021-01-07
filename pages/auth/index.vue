@@ -25,7 +25,7 @@ import { required, minLength, between } from 'vuelidate/lib/validators'
 export default {
     name: 'Index',
     layout: 'empty',
-    auth: false,
+    auth: true,
     data() {
         return {
             name: '',

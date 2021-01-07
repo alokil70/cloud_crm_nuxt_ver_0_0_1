@@ -74,6 +74,10 @@
 
 .error {
     color: $color-alt;
+    animation-name: shakeError;
+    animation-fill-mode: forwards;
+    animation-duration: .6s;
+    animation-timing-function: ease-in-out;
 }
 
 
@@ -82,14 +86,6 @@
 
 
 
-
-.form-group__message, .error {
-    font-size: 0.75rem;
-    line-height: 1;
-    display: none;
-    margin-left: 14px;
-    margin-top: -1.6875rem;
-    margin-bottom: 0.9375rem; }
 
 .form-group--alert,
 .form-group--error {

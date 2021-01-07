@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1 class="flex-center-align fz28 fw300">
-            Учетная запись {{ manager.name }}
+            Учетная запись дилера {{ manager.name }}
         </h1>
         <h3 class="flex-center-align fw300">создана "{{ created }}"</h3>
         <div class="flex-center-align flex-wrap w1100">
@@ -21,7 +21,7 @@
                 <m-input v-model="manager.expire" :label="titles.expired" />
             </div>
             <div class="input-label card-min m12 flex-center-align">
-                <m-input v-model="isAdmin" :label="titles.access" />
+                <m-input v-model="manager.admin" :label="titles.access" />
             </div>
             <m-btn class="w400 bg-green" :title="titles.button" />
         </div>
@@ -55,13 +55,6 @@ export default {
         ...mapGetters({
             getManager: 'users/get',
         }),
-        isAdmin() {
-            if (this.manager.admin) {
-                return 'Администратор'
-            } else {
-                return 'Пользователь'
-            }
-        },
         manager() {
             return this.getManager(Number(this.$route.params.id))
         },

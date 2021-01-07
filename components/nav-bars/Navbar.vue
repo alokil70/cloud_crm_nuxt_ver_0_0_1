@@ -2,11 +2,15 @@
     <header>
         <nav>
             <ul>
-                <li><nuxt-link to="/client">Клиенты</nuxt-link></li>
+                <li>
+                    <nuxt-link v-if="$auth.user.admin" to="/client"
+                        >Клиенты</nuxt-link
+                    >
+                </li>
                 <li><nuxt-link to="/company">Компании</nuxt-link></li>
                 <li><nuxt-link to="/diler">Дилеры</nuxt-link></li>
                 <li>
-                    <nuxt-link to="/manager">
+                    <nuxt-link v-if="$auth.user.admin" to="/manager">
                         Менеджеры
                     </nuxt-link>
                 </li>
@@ -51,7 +55,6 @@ export default {
     methods: {
         logout() {
             this.$auth.logout()
-            this.$router.push('/auth/login')
         },
     },
 }

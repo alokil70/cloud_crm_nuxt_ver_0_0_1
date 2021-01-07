@@ -1,34 +1,24 @@
 <template>
-    <div class="center">
+    <div class="flex-center-align">
         <div class="auth-card">
-            <h1 class="header">Добавить</h1>
+            <h1 class="header flex-center-align">Добавить</h1>
             <form @submit.prevent="userRegister">
-                <!--<div>
-                    <label>Username</label>
-                    <input v-model="user.name" type="text" />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input v-model="user.email" type="email" />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input v-model="user.password" type="password" />
-                </div>
-                <div>
-                    <label>CompanyName</label>
-                    <input v-model="user.company" type="text" />
-                </div>
-                <div>
-                    <label>City</label>
-                    <input v-model="user.city" type="text" />
-                </div>-->
-                <div v-for="item in columnName" :key="item.id">
+                <div
+                    v-for="item in columnName"
+                    :key="item.id"
+                    class="m6 flex-between"
+                >
                     <label>{{ item.title }}</label>
                     <input v-model="item.value" :type="item.type" />
                 </div>
                 <div>
-                    <button class="btn w100" type="submit">Submit</button>
+                    <m-btn
+                        class="bg-red"
+                        :disabled="loading"
+                        title="Сохранить"
+                        @click="userRegister"
+                        >Сохранить</m-btn
+                    >
                 </div>
             </form>
         </div>
@@ -36,10 +26,11 @@
 </template>
 
 <script>
+import MBtn from '@/components/button/m-btn'
 export default {
-    name: 'Register',
-    layout: 'empty',
-    auth: false,
+    name: 'MUserCreate',
+    components: { MBtn },
+    auth: true,
     data() {
         return {
             user: {
@@ -64,7 +55,13 @@ export default {
                     field: 'email',
                     value: 'user12345@gmail.com',
                 },
-                { id: 3, title: 'Город', type: 'text', value: 'Пятигорск' },
+                {
+                    id: 3,
+                    title: 'Город',
+                    type: 'text',
+                    field: 'city',
+                    value: 'Пятигорск',
+                },
                 {
                     id: 4,
                     title: 'Компания',
@@ -77,7 +74,7 @@ export default {
                     title: 'Лицензия',
                     type: 'text',
                     field: 'expire',
-                    value: '1980-1-1 00:00:00',
+                    value: '2020-12-31 00:00:00',
                 },
                 {
                     id: 6,
@@ -97,7 +94,7 @@ export default {
         }
     },
     methods: {
-        userRegister({ store }) {
+        userRegister() {
             /* try {
                 await this.$axios
                     .post('/auth/register', this.user)

@@ -3,14 +3,8 @@
         <div class="card w460">
             <h1 class="flex-center-align fz28">Авторизация</h1>
             <form class="m24">
-                <m-input-email
-                    v-model.trim="$v.login.email.$model"
-                    label="Логин"
-                />
                 <m-input
-                    v-model.trim="$v.login.email.$model"
-                    label="Логин"
-                /><m-input
+                    id="email"
                     v-model.trim="$v.login.email.$model"
                     label="Логин"
                     :error="!$v.login.email.required"
@@ -23,6 +17,7 @@
                     }"
                 />
                 <m-input
+                    id="password"
                     v-model.trim="$v.login.password.$model"
                     label="Пароль"
                     type="password"
@@ -45,12 +40,6 @@
                     :disabled="loading"
                     title="Войти"
                     @click="userLogin"
-                />
-                <m-btn
-                    class="bg-red"
-                    :disabled="loading"
-                    title="Создать пользователя"
-                    @click="userCreate"
                 />
             </div>
         </div>
@@ -131,9 +120,6 @@ export default {
                 this.login.password = ''
                 console.log('error', e.message)
             }
-        },
-        userCreate() {
-            this.$router.push('/auth/createUser')
         },
     },
 }

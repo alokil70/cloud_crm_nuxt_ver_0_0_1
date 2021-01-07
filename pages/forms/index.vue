@@ -14,6 +14,7 @@ import MTable from '~/components/table/company/m-table-company'
 
 export default {
     name: 'Index',
+    auth: true,
     components: { MForm, MToggle, MTable },
     async asyncData({ store }) {
         if (store.getters['company/COMPANY'].length === 0) {

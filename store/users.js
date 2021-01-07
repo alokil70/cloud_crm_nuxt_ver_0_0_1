@@ -7,6 +7,7 @@ export const mutations = {
         state.users = payload
     },
 }
+
 export const actions = {
     GET_USERS_FROM_API({ commit }) {
         const token = this.$auth.getToken('local')
@@ -23,16 +24,26 @@ export const actions = {
         }
     },
     async SET_USER_TO_API({ commit }, payload) {
-        try {
-            await this.$axios.post('/auth/register', payload).then((e) => {
-                if (e.status === 201) {
-                    this.$router.push('/auth/login')
-                } else {
-                    console.log(e.statusText)
-                }
-            })
-        } catch (err) {
-            console.log(err)
+        const token = this.$auth.getToken('local')
+        if (token) {
+            try {
+                await this.$axios({
+                    method: 'post',
+                    url: '/users',
+                    headers: {
+                        Authorization: 'Bearer ' + token.split(' ')[2],
+                    },
+                    data: payload,
+                }).then((e) => {
+                    if (e.status === 201) {
+                        this.$router.push('/diler')
+                    } else {
+                        console.log(e.statusText)
+                    }
+                })
+            } catch (err) {
+                console.log(err)
+            }
         }
     },
     async GET_USER_BY_ID({ state }, id) {

@@ -23,7 +23,7 @@
             <div class="row-left">
                 Действительна до {{ dateFilter(rowData.expire) }}
             </div>
-            <div class="row-center">Администратор {{ rowData.admin }}</div>
+            <div class="row-center">{{ isAdmin }}</div>
         </nuxt-link>
     </div>
 </template>
@@ -39,6 +39,15 @@ export default {
             default: () => {
                 return {}
             },
+        },
+    },
+    computed: {
+        isAdmin() {
+            if (this.rowData.admin) {
+                return 'Администратор'
+            } else {
+                return 'Пользователь'
+            }
         },
     },
     methods: {

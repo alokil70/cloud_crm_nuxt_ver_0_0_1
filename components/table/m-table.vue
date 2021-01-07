@@ -1,6 +1,6 @@
 <template>
     <div class="m-table card">
-        <h1 class="flex-center-align fz28 bg_title">{{ title }}</h1>
+        <h1 class="flex-center-align fz28 bg-title">{{ title }}</h1>
         <div class="m-table__header flex-around">
             <p v-for="col in columnName" :key="col.title">
                 {{ col.title }}
