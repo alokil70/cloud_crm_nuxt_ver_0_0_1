@@ -51,6 +51,9 @@ body {
 .container {
     margin: $nav-bar-height+$margin $margin 0 $margin;
 }
+.block {
+    display: block;
+}
 
 .center {
     display: flex;

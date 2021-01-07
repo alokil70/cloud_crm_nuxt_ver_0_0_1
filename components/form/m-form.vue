@@ -1,7 +1,7 @@
 <template>
     <div class="flex">
         <form class="form">
-            <h1 class="form__title">Заголовок</h1>
+            <h2 class="form__title">Заголовок</h2>
             <div class="form__groups">
                 <div
                     class="form__group"
@@ -22,7 +22,7 @@
                     {{ $v.name.$params.minLength.min }} letters.
                 </div>
                 <div
-                    class="form-group"
+                    class="form__group"
                     :class="{ 'form-group--error': $v.age.$error }"
                 >
                     <label class="form__label">Age</label>
@@ -36,9 +36,9 @@
                     Must be between {{ $v.age.$params.between.min }} and
                     {{ $v.age.$params.between.max }}
                 </div>
-                <span tabindex="0">Blur to see changes</span>
-            </div>
+                <span class="block" tabindex="0">Blur to see changes</span>
             <button class="form__button">Войти</button>
+            </div>
         </form>
 
         <form class="form">

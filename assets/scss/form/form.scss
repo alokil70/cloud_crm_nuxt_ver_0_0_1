@@ -1,10 +1,14 @@
 .form {
     width: 100%;
     margin: $margin*2;
+    position: relative;
     &__title {
-        font-weight: normal;
-        text-align: center;
-        margin: 0 0 32px 0;
+        position: absolute;
+        letter-spacing: 2px;
+        top: -14px;
+        left: 10px;
+        padding: 0 5px;
+        background-color: $color-body;
     }
 
     &__input, &__button {
@@ -25,7 +29,6 @@
     &__label {
         position: absolute;
         letter-spacing: 2px;
-        display: inline-block;
         top: -12px;
         left: 8px;
         padding: 0 5px;
