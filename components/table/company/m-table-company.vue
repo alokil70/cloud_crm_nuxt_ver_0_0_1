@@ -74,7 +74,7 @@ export default {
             this.$modal.show(
                 MForm,
                 { height: 'auto' },
-                { height: '90%', width: '90%' }
+                { height: 'auto', width: '50%' },
             )
         },
         add2() {
